@@ -82,6 +82,12 @@ class User
         return $this->products;
     }
 
+    public function getUserWithProducts()
+    {
+        $this->products = $this->getProducts();
+        return $this;
+    }
+
     public function addProduct(Product $product): self
     {
         if (!$this->products->contains($product)) {
